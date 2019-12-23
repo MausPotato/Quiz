@@ -19,3 +19,65 @@ body {
 }
 
 // ad-block
+
+.ad-block {
+  --width: 970px;
+  --height: 250px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: var(--width);
+  height: var(--height);
+  text-decoration: none;
+  margin: 0 auto;
+  @include at-breakpoint(md) {
+    --width: 728px;
+    --height: 90px;
+  }
+  @include at-breakpoint(sm) {
+    --width: 300px;
+    --height: 250px;
+    flex-direction: column;
+  }
+  .ad-img {
+    width: calc(var(--height) / .51);
+    height: var(--height);
+    background: url(../img/1200_627_1.jpg) center/contain no-repeat;
+    @include at-breakpoint(sm) {
+      width: var(--width);
+    }
+  }
+}
+
+.text {
+  --title-color: black;
+  --describe-color: gray;
+  --title-font: 1.2rem;
+  --describe-font: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc(var(--width) / 2);
+  height: var(--height);
+  padding: 0 .5rem;
+  @include at-breakpoint(md) {
+    width: calc(var(--width) * .8);
+  }
+  @include at-breakpoint(sm) {
+    --title-font: 1rem;
+    --describe-font: .9rem;
+    align-items: center;
+    width: var(--width);
+    height: calc(var(--height) / 2);
+  }
+  .title {
+    font-size: var(--title-font);
+    color: var(--title-color);
+    font-weight: 800;
+    margin: 0;
+  }
+  .describe {
+    font-size: var(--describe-font);
+    color: var(--describe-color);
+  }
+}

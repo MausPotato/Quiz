@@ -43,6 +43,52 @@ body {
     width: calc(var(--height) / .51);
     height: var(--height);
     background: url(../img/1200_627_1.jpg) center/contain no-repeat;
+    position: relative;
+    &::before {
+      content: "";
+      width: 99%;
+      height: var(--height);
+      position: absolute;
+      animation: shine 3s linear infinite;
+      @keyframes shine {
+        0% {
+          background: rgba(0, 0, 0, .1);
+        }
+        90% {
+          background: rgba(0, 0, 0, .1);
+        }
+        91% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1), rgba(255, 255, 255, 1));
+        }
+        92% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 60%, rgba(255, 255, 255, 1) 80%, rgba(0, 0, 0, .1) 100%);
+        }
+        93% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 30%, rgba(255, 255, 255, 1) 60%, rgba(0, 0, 0, .1) 90%);
+        }
+        94% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 10%, rgba(255, 255, 255, 1) 30%, rgba(0, 0, 0, .1) 90%);
+        }
+        95% {
+          background: linear-gradient(-45deg, rgba(255, 255, 255, 1), rgba(0, 0, 0, .1));
+        }
+        96% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 90%, rgba(255, 255, 255, 1) 30%, rgba(0, 0, 0, .1) 10%);
+        }
+        97% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 90%, rgba(255, 255, 255, 1) 60%, rgba(0, 0, 0, .1) 30%);
+        }
+        98% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 100%, rgba(255, 255, 255, 1) 80%, rgba(0, 0, 0, .1) 60%);
+        }
+        99% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 100%, rgba(255, 255, 255, 1) 90%, rgba(0, 0, 0, .1) 70%);
+        }
+        100% {
+          background: linear-gradient(-45deg, rgba(0, 0, 0, .1) 100%, rgba(255, 255, 255, 1) 95%, rgba(0, 0, 0, .1) 85%);
+        }
+      }
+    }
     @include at-breakpoint(sm) {
       width: var(--width);
     }
